@@ -1,0 +1,101 @@
+what,kind,bundleId,bundleVersion,description,time
+activated,workbench,org.eclipse.ui.workbench,3.7.1.v20120104-1859,"",1413515834875
+activated,view,org.eclipse.ui.views,3.6.0.v20110928-1505,"org.eclipse.ui.views.PropertySheet",1413515834937
+activated,view,org.eclipse.egit.ui,1.3.0.201202151440-r,"org.eclipse.egit.ui.RepositoriesView",1413515837640
+deactivated,workbench,org.eclipse.ui.workbench,3.7.1.v20120104-1859,"",1413515840046
+activated,workbench,org.eclipse.ui.workbench,3.7.1.v20120104-1859,"",1413515878578
+deactivated,workbench,org.eclipse.ui.workbench,3.7.1.v20120104-1859,"",1413515880562
+activated,workbench,org.eclipse.ui.workbench,3.7.1.v20120104-1859,"",1413516206296
+executed,command,org.eclipse.egit.ui,1.3.0.201202151440-r,"org.eclipse.egit.ui.RepositoriesViewRefresh",1413516206421
+activated,view,org.eclipse.team.ui,3.6.101.R37x_v20111109-0800,"org.eclipse.team.sync.views.SynchronizeView",1413516216015
+activated,view,org.eclipse.egit.ui,1.3.0.201202151440-r,"org.eclipse.egit.ui.RepositoriesView",1413516220703
+deactivated,workbench,org.eclipse.ui.workbench,3.7.1.v20120104-1859,"",1413516236609
+activated,workbench,org.eclipse.ui.workbench,3.7.1.v20120104-1859,"",1413516260000
+deactivated,workbench,org.eclipse.ui.workbench,3.7.1.v20120104-1859,"",1413516260859
+activated,workbench,org.eclipse.ui.workbench,3.7.1.v20120104-1859,"",1413516277437
+started,bundle,org.eclipse.core.variables,3.2.500.v20110928-1503,"org.eclipse.core.variables",1413516288625
+deactivated,workbench,org.eclipse.ui.workbench,3.7.1.v20120104-1859,"",1413516292562
+no handler,command,org.eclipse.ui,3.7.0.v20110928-1505,"org.eclipse.ui.edit.undo",1413516403609
+no handler,command,org.eclipse.ui,3.7.0.v20110928-1505,"org.eclipse.ui.edit.undo",1413516405203
+no handler,command,org.eclipse.ui,3.7.0.v20110928-1505,"org.eclipse.ui.edit.undo",1413516407312
+no handler,command,org.eclipse.ui,3.7.0.v20110928-1505,"org.eclipse.ui.edit.undo",1413516407875
+no handler,command,org.eclipse.ui,3.7.0.v20110928-1505,"org.eclipse.ui.edit.undo",1413516408265
+no handler,command,org.eclipse.ui,3.7.0.v20110928-1505,"org.eclipse.ui.edit.undo",1413516408671
+no handler,command,org.eclipse.ui,3.7.0.v20110928-1505,"org.eclipse.ui.edit.undo",1413516409640
+executed,command,org.eclipse.ui,3.7.0.v20110928-1505,"org.eclipse.ui.edit.copy",1413516413281
+executed,command,org.eclipse.ui,3.7.0.v20110928-1505,"org.eclipse.ui.edit.paste",1413516416359
+activated,workbench,org.eclipse.ui.workbench,3.7.1.v20120104-1859,"",1413516423531
+executed,command,org.eclipse.egit.ui,1.3.0.201202151440-r,"org.eclipse.egit.ui.team.Commit",1413516423671
+deactivated,workbench,org.eclipse.ui.workbench,3.7.1.v20120104-1859,"",1413516424046
+activated,workbench,org.eclipse.ui.workbench,3.7.1.v20120104-1859,"",1413516886671
+deactivated,workbench,org.eclipse.ui.workbench,3.7.1.v20120104-1859,"",1413517489015
+activated,workbench,org.eclipse.ui.workbench,3.7.1.v20120104-1859,"",1413541242359
+activated,view,org.eclipse.team.ui,3.6.101.R37x_v20111109-0800,"org.eclipse.team.sync.views.SynchronizeView",1413541247468
+deactivated,workbench,org.eclipse.ui.workbench,3.7.1.v20120104-1859,"",1413541250296
+activated,workbench,org.eclipse.ui.workbench,3.7.1.v20120104-1859,"",1413541420109
+activated,view,org.eclipse.egit.ui,1.3.0.201202151440-r,"org.eclipse.egit.ui.RepositoriesView",1413541422890
+deactivated,workbench,org.eclipse.ui.workbench,3.7.1.v20120104-1859,"",1413541430375
+activated,workbench,org.eclipse.ui.workbench,3.7.1.v20120104-1859,"",1413541472093
+executed,command,org.eclipse.egit.ui,1.3.0.201202151440-r,"org.eclipse.egit.ui.RepositoriesViewImportProjects",1413541472109
+started,bundle,org.eclipse.jst.ws.jaxws.dom.integration,1.0.101.v201201031437,"org.eclipse.jst.ws.jaxws.dom.integration",1413541472968
+started,bundle,org.eclipse.jst.ws.jaxws.dom.ui,1.0.0.v201004171919,"org.eclipse.jst.ws.jaxws.dom.ui",1413541473062
+activated,perspective,org.eclipse.jst.j2ee.ui,1.1.503.v201201190400,"org.eclipse.jst.j2ee.J2EEPerspective",1413541482265
+activated,view,org.eclipse.ui.console,3.5.100.v20111007_r372,"org.eclipse.ui.console.ConsoleView",1413541482531
+activated,view,org.eclipse.ui.navigator.resources,3.4.300.v20110928-1505,"org.eclipse.ui.navigator.ProjectExplorer",1413541486984
+started,bundle,org.eclipse.jpt.common.core,1.0.2.v201111103010,"org.eclipse.jpt.common.core",1413541495906
+started,bundle,org.eclipse.jpt.jpa.core,3.0.2.v201201243020,"org.eclipse.jpt.jpa.core",1413541495906
+started,bundle,org.eclipse.wst.sse.core,1.1.602.v201112071516,"org.eclipse.wst.sse.core",1413541496046
+started,bundle,org.eclipse.jst.jsp.core,1.2.402.v201112071853,"org.eclipse.jst.jsp.core",1413541501250
+started,bundle,org.eclipse.wst.css.core,1.1.501.v201111292150,"org.eclipse.wst.css.core",1413541501343
+started,bundle,org.eclipse.debug.ui,3.7.102.v20111129-1423_r372,"org.eclipse.debug.ui",1413541529390
+started,bundle,org.eclipse.wst.jsdt.core,1.1.102.v201111090634,"org.eclipse.wst.jsdt.core",1413541554281
+started,bundle,org.eclipse.wst.jsdt.manipulation,1.0.300.v201104272153,"org.eclipse.wst.jsdt.manipulation",1413541554484
+started,bundle,org.eclipse.wst.jsdt.ui,1.1.102.v201201131900,"org.eclipse.wst.jsdt.ui",1413541554484
+deactivated,workbench,org.eclipse.ui.workbench,3.7.1.v20120104-1859,"",1413541554578
+activated,workbench,org.eclipse.ui.workbench,3.7.1.v20120104-1859,"",1413541554687
+deactivated,workbench,org.eclipse.ui.workbench,3.7.1.v20120104-1859,"",1413541555562
+activated,workbench,org.eclipse.ui.workbench,3.7.1.v20120104-1859,"",1413541559109
+deactivated,workbench,org.eclipse.ui.workbench,3.7.1.v20120104-1859,"",1413541559140
+activated,workbench,org.eclipse.ui.workbench,3.7.1.v20120104-1859,"",1413541570250
+executed,command,org.eclipse.egit.ui,1.3.0.201202151440-r,"org.eclipse.egit.ui.team.Commit",1413541570250
+deactivated,workbench,org.eclipse.ui.workbench,3.7.1.v20120104-1859,"",1413541574718
+activated,workbench,org.eclipse.ui.workbench,3.7.1.v20120104-1859,"",1413541673312
+deactivated,workbench,org.eclipse.ui.workbench,3.7.1.v20120104-1859,"",1413541683703
+activated,workbench,org.eclipse.ui.workbench,3.7.1.v20120104-1859,"",1413541685531
+deactivated,workbench,org.eclipse.ui.workbench,3.7.1.v20120104-1859,"",1413541685531
+activated,workbench,org.eclipse.ui.workbench,3.7.1.v20120104-1859,"",1413541687531
+executed,command,org.eclipse.egit.ui,1.3.0.201202151440-r,"org.eclipse.egit.ui.team.Commit",1413541687546
+deactivated,workbench,org.eclipse.ui.workbench,3.7.1.v20120104-1859,"",1413541702343
+activated,workbench,org.eclipse.ui.workbench,3.7.1.v20120104-1859,"",1413541702906
+deactivated,workbench,org.eclipse.ui.workbench,3.7.1.v20120104-1859,"",1413541702921
+activated,workbench,org.eclipse.ui.workbench,3.7.1.v20120104-1859,"",1413541783281
+deactivated,workbench,org.eclipse.ui.workbench,3.7.1.v20120104-1859,"",1413541783593
+activated,workbench,org.eclipse.ui.workbench,3.7.1.v20120104-1859,"",1413541811390
+opened,view,org.eclipse.team.ui,3.6.101.R37x_v20111109-0800,"org.eclipse.team.ui.GenericHistoryView",1413541811562
+opened,view,org.eclipse.mylyn.tasks.ui,3.8.4.v20130429-0100,"org.eclipse.mylyn.tasks.ui.views.repositories",1413541811765
+activated,perspective,org.eclipse.team.ui,3.6.101.R37x_v20111109-0800,"org.eclipse.team.ui.TeamSynchronizingPerspective",1413541811781
+activated,view,org.eclipse.team.ui,3.6.101.R37x_v20111109-0800,"org.eclipse.team.sync.views.SynchronizeView",1413541811781
+activated,perspective,org.eclipse.egit.ui,1.3.0.201202151440-r,"org.eclipse.egit.ui.GitRepositoryExploring",1413541854656
+activated,view,org.eclipse.egit.ui,1.3.0.201202151440-r,"org.eclipse.egit.ui.RepositoriesView",1413541861875
+activated,view,org.eclipse.team.ui,3.6.101.R37x_v20111109-0800,"org.eclipse.team.sync.views.SynchronizeView",1413541883031
+error,log,,,"Problems occurred when invoking code from plug-in: ""org.eclipse.team.ui"".",1413541905062
+opened,view,org.eclipse.egit.ui,1.3.0.201202151440-r,"org.eclipse.egit.ui.StagingView",1413541912109
+activated,view,org.eclipse.egit.ui,1.3.0.201202151440-r,"org.eclipse.egit.ui.StagingView",1413541912125
+activated,view,org.eclipse.team.ui,3.6.101.R37x_v20111109-0800,"org.eclipse.team.sync.views.SynchronizeView",1413541915890
+deactivated,workbench,org.eclipse.ui.workbench,3.7.1.v20120104-1859,"",1413541920562
+activated,workbench,org.eclipse.ui.workbench,3.7.1.v20120104-1859,"",1413541929734
+executed,command,org.eclipse.ui,3.7.0.v20110928-1505,"org.eclipse.ui.perspectives.showPerspective",1413541929750
+executed,command,org.eclipse.ui,3.7.0.v20110928-1505,"org.eclipse.ui.perspectives.showPerspective",1413541929750
+activated,view,org.eclipse.egit.ui,1.3.0.201202151440-r,"org.eclipse.egit.ui.RepositoriesView",1413541935218
+started,bundle,org.eclipse.wst.server.core,1.1.304.v20120208_1420,"org.eclipse.wst.server.core",1413541945250
+started,bundle,org.eclipse.wst.server.ui,1.3.0.v20120210_1439,"org.eclipse.wst.server.ui",1413541945343
+error,log,,,"Unhandled event loop exception",1413541950171
+deactivated,workbench,org.eclipse.ui.workbench,3.7.1.v20120104-1859,"",1413541951734
+activated,workbench,org.eclipse.ui.workbench,3.7.1.v20120104-1859,"",1413541960921
+opened,editor,org.eclipse.egit.ui,1.3.0.201202151440-r,"org.eclipse.egit.ui.commitEditor",1413541964359
+activated,editor,org.eclipse.egit.ui,1.3.0.201202151440-r,"org.eclipse.egit.ui.commitEditor",1413541964406
+executed,command,org.eclipse.egit.ui,1.3.0.201202151440-r,"org.eclipse.egit.ui.team.OpenCommit",1413541964406
+started,bundle,org.eclipse.search,3.7.0.v20110928-1504,"org.eclipse.search",1413542046656
+deactivated,workbench,org.eclipse.ui.workbench,3.7.1.v20120104-1859,"",1413542048343
+activated,workbench,org.eclipse.ui.workbench,3.7.1.v20120104-1859,"",1413542053031
+executed,command,org.eclipse.mylyn.tasks.ui,3.8.4.v20130429-0100,"org.eclipse.mylyn.tasks.ui.command.openTask",1413542053062

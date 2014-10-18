@@ -1,0 +1,9 @@
+C:\Archivos de programa\NetBeans 6.8\platform11=1413045284265
+C:\Archivos de programa\NetBeans 6.8\nb6.8=1413045284265
+C:\Archivos de programa\NetBeans 6.8\ide12=1413045284281
+C:\Archivos de programa\NetBeans 6.8\java3=1413045392062
+C:\Archivos de programa\NetBeans 6.8\apisupport1=1413045392078
+C:\Archivos de programa\NetBeans 6.8\websvccommon1=1413045284281
+C:\Archivos de programa\NetBeans 6.8\profiler3=1413045392093
+C:\Archivos de programa\NetBeans 6.8\harness=1413045392078
+c:\mywms=1413045392093

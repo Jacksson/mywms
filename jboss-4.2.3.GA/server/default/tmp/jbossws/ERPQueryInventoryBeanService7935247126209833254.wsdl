@@ -1,0 +1,175 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<definitions name='ERPQueryInventoryBeanService' targetNamespace='http://ws.inventory.los.linogistix.de/' xmlns='http://schemas.xmlsoap.org/wsdl/' xmlns:ns1='http://com.linogistix/connector/wms/inventory' xmlns:soap='http://schemas.xmlsoap.org/wsdl/soap/' xmlns:tns='http://ws.inventory.los.linogistix.de/' xmlns:xsd='http://www.w3.org/2001/XMLSchema'>
+ <types>
+  <xs:schema targetNamespace='http://com.linogistix/connector/wms/inventory' version='1.0' xmlns:tns='http://com.linogistix/connector/wms/inventory' xmlns:xs='http://www.w3.org/2001/XMLSchema'>
+   <xs:complexType name='ItemDataTO'>
+    <xs:sequence>
+     <xs:element minOccurs='0' name='articleRef' type='xs:string'/>
+     <xs:element minOccurs='0' name='description' type='xs:string'/>
+     <xs:element minOccurs='0' name='clientRef' type='xs:string'/>
+     <xs:element name='minimumStock' type='xs:int'/>
+    </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name='ERPBatchDataTO'>
+    <xs:sequence>
+     <xs:element minOccurs='0' name='clientRef' type='xs:string'/>
+     <xs:element minOccurs='0' name='articleRef' type='xs:string'/>
+     <xs:element minOccurs='0' name='batchRef' type='xs:string'/>
+     <xs:element minOccurs='0' name='description' type='xs:string'/>
+    </xs:sequence>
+   </xs:complexType>
+   <xs:complexType final='#all' name='ItemDataTOArray'>
+    <xs:sequence>
+     <xs:element maxOccurs='unbounded' minOccurs='0' name='item' nillable='true' type='tns:ItemDataTO'/>
+    </xs:sequence>
+   </xs:complexType>
+   <xs:complexType final='#all' name='ERPBatchDataTOArray'>
+    <xs:sequence>
+     <xs:element maxOccurs='unbounded' minOccurs='0' name='item' nillable='true' type='tns:ERPBatchDataTO'/>
+    </xs:sequence>
+   </xs:complexType>
+  </xs:schema>
+ </types>
+ <message name='ERPQueryInventoryBean_cancelCronJob'/>
+ <message name='ERPQueryInventoryBean_cancelCronJobResponse'/>
+ <message name='ERPQueryInventoryBean_createCronJob'/>
+ <message name='ERPQueryInventoryBean_createCronJobResponse'/>
+ <message name='ERPQueryInventoryBean_getBatchData'>
+  <part name='clientref' type='xsd:string'/>
+  <part name='batchRef' type='xsd:string'/>
+ </message>
+ <message name='ERPQueryInventoryBean_getBatchDataResponse'>
+  <part name='return' type='ns1:ERPBatchDataTOArray'/>
+ </message>
+ <message name='ERPQueryInventoryBean_getItemData'>
+  <part name='clientref' type='xsd:string'/>
+  <part name='articleRef' type='xsd:string'/>
+ </message>
+ <message name='ERPQueryInventoryBean_getItemDataResponse'>
+  <part name='return' type='ns1:ItemDataTOArray'/>
+ </message>
+ <message name='ERPQueryInventoryBean_statusCronJob'/>
+ <message name='ERPQueryInventoryBean_statusCronJobResponse'>
+  <part name='return' type='xsd:string'/>
+ </message>
+ <message name='ERPQueryInventoryBean_update'/>
+ <message name='ERPQueryInventoryBean_updateResponse'/>
+ <message name='ERPQueryInventoryBean_updateItemData'/>
+ <message name='ERPQueryInventoryBean_updateItemDataResponse'/>
+ <message name='ERPQueryInventoryBean_updateLot'/>
+ <message name='ERPQueryInventoryBean_updateLotResponse'/>
+ <portType name='ERPQueryInventoryBean'>
+  <operation name='cancelCronJob'>
+   <input message='tns:ERPQueryInventoryBean_cancelCronJob'/>
+   <output message='tns:ERPQueryInventoryBean_cancelCronJobResponse'/>
+  </operation>
+  <operation name='createCronJob'>
+   <input message='tns:ERPQueryInventoryBean_createCronJob'/>
+   <output message='tns:ERPQueryInventoryBean_createCronJobResponse'/>
+  </operation>
+  <operation name='getBatchData' parameterOrder='clientref batchRef'>
+   <input message='tns:ERPQueryInventoryBean_getBatchData'/>
+   <output message='tns:ERPQueryInventoryBean_getBatchDataResponse'/>
+  </operation>
+  <operation name='getItemData' parameterOrder='clientref articleRef'>
+   <input message='tns:ERPQueryInventoryBean_getItemData'/>
+   <output message='tns:ERPQueryInventoryBean_getItemDataResponse'/>
+  </operation>
+  <operation name='statusCronJob'>
+   <input message='tns:ERPQueryInventoryBean_statusCronJob'/>
+   <output message='tns:ERPQueryInventoryBean_statusCronJobResponse'/>
+  </operation>
+  <operation name='update'>
+   <input message='tns:ERPQueryInventoryBean_update'/>
+   <output message='tns:ERPQueryInventoryBean_updateResponse'/>
+  </operation>
+  <operation name='updateItemData'>
+   <input message='tns:ERPQueryInventoryBean_updateItemData'/>
+   <output message='tns:ERPQueryInventoryBean_updateItemDataResponse'/>
+  </operation>
+  <operation name='updateLot'>
+   <input message='tns:ERPQueryInventoryBean_updateLot'/>
+   <output message='tns:ERPQueryInventoryBean_updateLotResponse'/>
+  </operation>
+ </portType>
+ <binding name='ERPQueryInventoryBeanBinding' type='tns:ERPQueryInventoryBean'>
+  <soap:binding style='rpc' transport='http://schemas.xmlsoap.org/soap/http'/>
+  <operation name='cancelCronJob'>
+   <soap:operation soapAction=''/>
+   <input>
+    <soap:body namespace='http://ws.inventory.los.linogistix.de/' use='literal'/>
+   </input>
+   <output>
+    <soap:body namespace='http://ws.inventory.los.linogistix.de/' use='literal'/>
+   </output>
+  </operation>
+  <operation name='createCronJob'>
+   <soap:operation soapAction=''/>
+   <input>
+    <soap:body namespace='http://ws.inventory.los.linogistix.de/' use='literal'/>
+   </input>
+   <output>
+    <soap:body namespace='http://ws.inventory.los.linogistix.de/' use='literal'/>
+   </output>
+  </operation>
+  <operation name='getBatchData'>
+   <soap:operation soapAction=''/>
+   <input>
+    <soap:body namespace='http://ws.inventory.los.linogistix.de/' use='literal'/>
+   </input>
+   <output>
+    <soap:body namespace='http://ws.inventory.los.linogistix.de/' use='literal'/>
+   </output>
+  </operation>
+  <operation name='getItemData'>
+   <soap:operation soapAction=''/>
+   <input>
+    <soap:body namespace='http://ws.inventory.los.linogistix.de/' use='literal'/>
+   </input>
+   <output>
+    <soap:body namespace='http://ws.inventory.los.linogistix.de/' use='literal'/>
+   </output>
+  </operation>
+  <operation name='statusCronJob'>
+   <soap:operation soapAction=''/>
+   <input>
+    <soap:body namespace='http://ws.inventory.los.linogistix.de/' use='literal'/>
+   </input>
+   <output>
+    <soap:body namespace='http://ws.inventory.los.linogistix.de/' use='literal'/>
+   </output>
+  </operation>
+  <operation name='update'>
+   <soap:operation soapAction=''/>
+   <input>
+    <soap:body namespace='http://ws.inventory.los.linogistix.de/' use='literal'/>
+   </input>
+   <output>
+    <soap:body namespace='http://ws.inventory.los.linogistix.de/' use='literal'/>
+   </output>
+  </operation>
+  <operation name='updateItemData'>
+   <soap:operation soapAction=''/>
+   <input>
+    <soap:body namespace='http://ws.inventory.los.linogistix.de/' use='literal'/>
+   </input>
+   <output>
+    <soap:body namespace='http://ws.inventory.los.linogistix.de/' use='literal'/>
+   </output>
+  </operation>
+  <operation name='updateLot'>
+   <soap:operation soapAction=''/>
+   <input>
+    <soap:body namespace='http://ws.inventory.los.linogistix.de/' use='literal'/>
+   </input>
+   <output>
+    <soap:body namespace='http://ws.inventory.los.linogistix.de/' use='literal'/>
+   </output>
+  </operation>
+ </binding>
+ <service name='ERPQueryInventoryBeanService'>
+  <port binding='tns:ERPQueryInventoryBeanBinding' name='ERPQueryInventoryBeanPort'>
+   <soap:address location='http://127.0.0.1:8080/webservice/ERPQueryInventoryBean'/>
+  </port>
+ </service>
+</definitions>

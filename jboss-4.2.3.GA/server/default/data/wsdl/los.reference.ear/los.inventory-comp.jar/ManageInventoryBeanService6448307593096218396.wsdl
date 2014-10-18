@@ -1,0 +1,391 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<definitions name="ManageInventoryBeanService" targetNamespace="http://ws.inventory.los.linogistix.de/" xmlns="http://schemas.xmlsoap.org/wsdl/" xmlns:tns="http://ws.inventory.los.linogistix.de/" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/">
+  <types>
+    <xs:schema targetNamespace="http://ws.inventory.los.linogistix.de/" version="1.0" xmlns:tns="http://ws.inventory.los.linogistix.de/" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+   <xs:element name="EntityNotFoundException" type="tns:EntityNotFoundException"/>
+   <xs:element name="FacadeException" type="tns:FacadeException"/>
+   <xs:element name="InventoryException" type="tns:InventoryException"/>
+   <xs:complexType name="InventoryException">
+    <xs:sequence>
+     <xs:element minOccurs="0" name="bundleName" type="xs:string"/>
+     <xs:element minOccurs="0" name="bundleResolver" type="xs:string"/>
+     <xs:element minOccurs="0" name="inventoryExceptionKey" type="tns:inventoryExceptionKey"/>
+     <xs:element minOccurs="0" name="key" type="xs:string"/>
+     <xs:element minOccurs="0" name="message" type="xs:string"/>
+     <xs:element maxOccurs="unbounded" minOccurs="0" name="parameters" type="xs:anyType"/>
+    </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="FacadeException">
+    <xs:sequence>
+     <xs:element minOccurs="0" name="bundleName" type="xs:string"/>
+     <xs:element minOccurs="0" name="bundleResolver" type="xs:string"/>
+     <xs:element minOccurs="0" name="key" type="xs:string"/>
+     <xs:element minOccurs="0" name="message" type="xs:string"/>
+     <xs:element maxOccurs="unbounded" minOccurs="0" name="parameters" type="xs:anyType"/>
+    </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="EntityNotFoundException">
+    <xs:sequence>
+     <xs:element minOccurs="0" name="message" type="xs:string"/>
+     <xs:element minOccurs="0" name="messageKey" type="tns:serviceExceptionKey"/>
+    </xs:sequence>
+   </xs:complexType>
+   <xs:simpleType name="inventoryExceptionKey">
+    <xs:restriction base="xs:string">
+     <xs:enumeration value="ADVICE_ASSIGNED"/>
+     <xs:enumeration value="ADVICE_POSITIONS_ASSIGNED"/>
+     <xs:enumeration value="ADVICE_CAANNOT_BE_ACCEPTED"/>
+     <xs:enumeration value="ADVICE_FINISHED"/>
+     <xs:enumeration value="ADVICE_MANDATORY"/>
+     <xs:enumeration value="ADVICE_REFRESH_ERROR"/>
+     <xs:enumeration value="AMBIGUOUS_SCAN"/>
+     <xs:enumeration value="AMOUNT_MUST_BE_GREATER_THAN_ZERO"/>
+     <xs:enumeration value="ARGUMENT_NULL"/>
+     <xs:enumeration value="ARTICLE_NULL"/>
+     <xs:enumeration value="CANNOT_BE_DELETED"/>
+     <xs:enumeration value="CANNOT_RESERVE_MORE_THAN_AVAILABLE"/>
+     <xs:enumeration value="CLIENT_MISMATCH"/>
+     <xs:enumeration value="CLIENT_NULL"/>
+     <xs:enumeration value="CONSTRAINT_VIOLATION"/>
+     <xs:enumeration value="CREATE_AVIS_FAILED"/>
+     <xs:enumeration value="CREATE_GOODSRECEIPT"/>
+     <xs:enumeration value="CREATE_ORDERREQUEST_FAILED"/>
+     <xs:enumeration value="CREATE_ORDERREQUEST_FAILED_WRONG_CLIENT"/>
+     <xs:enumeration value="CREATE_STOCKUNIT_ONSTOCK"/>
+     <xs:enumeration value="CREATE_STOCKUNIT_ON_STORAGELOCATION_FAILED"/>
+     <xs:enumeration value="CREATE_UNITLOAD"/>
+     <xs:enumeration value="DESTINATION_UNITLOAD_LOCKED"/>
+     <xs:enumeration value="ERROR_CONCURRENT_ACCESS"/>
+     <xs:enumeration value="ERROR_GETTING_DEFAULT_UNITLOADTYPE"/>
+     <xs:enumeration value="ERROR_NOTIFIEDAMOUNT_NEGATIVE"/>
+     <xs:enumeration value="INVENTORY_CREATE_STOCKUNIT_ON_TOP"/>
+     <xs:enumeration value="ITEMDATA_EXISTS"/>
+     <xs:enumeration value="ITEMDATA_ISLOCKED"/>
+     <xs:enumeration value="ITEMDATA_LOT_MISMATCH"/>
+     <xs:enumeration value="ITEMDATA_NOT_FOUND"/>
+     <xs:enumeration value="ITEMDATA_NOT_ON_UNITLOAD"/>
+     <xs:enumeration value="LABEL_NOT_PRINTED"/>
+     <xs:enumeration value="LOT_ALREADY_EXIST"/>
+     <xs:enumeration value="LOT_ISLOCKED"/>
+     <xs:enumeration value="LOT_MANDATORY"/>
+     <xs:enumeration value="LOT_MISMATCH"/>
+     <xs:enumeration value="LOT_NAME_NULL"/>
+     <xs:enumeration value="LOT_NOT_UNIQUE"/>
+     <xs:enumeration value="LOT_TOO_YOUNG"/>
+     <xs:enumeration value="MUST_SCAN_STOCKUNIT"/>
+     <xs:enumeration value="NOT_ACCEPTED"/>
+     <xs:enumeration value="NOT_A_FIXED_ASSIGNED_LOCATION"/>
+     <xs:enumeration value="NOT_A_GOODSIN_LOCATION"/>
+     <xs:enumeration value="NO_EXTINGUISHORDER_WITH_NUMBER"/>
+     <xs:enumeration value="NO_GOODS_RECEIPT_LOCATION"/>
+     <xs:enumeration value="NO_INVENTORY_FOR_LOT"/>
+     <xs:enumeration value="NO_LOT_WITH_NAME"/>
+     <xs:enumeration value="NO_PICKREQUEST"/>
+     <xs:enumeration value="NO_STOCKUNIT"/>
+     <xs:enumeration value="NO_STOCKUNIT_ON_FIXED_ASSIGNED_LOC"/>
+     <xs:enumeration value="NO_SUCH_CLIENT"/>
+     <xs:enumeration value="NO_SUCH_GOODS_OUT"/>
+     <xs:enumeration value="NO_SUCH_ITEMDATA"/>
+     <xs:enumeration value="NO_SUCH_LOT"/>
+     <xs:enumeration value="NO_SUCH_ORDERPOSITION"/>
+     <xs:enumeration value="NO_SUCH_STORAGELOCATION"/>
+     <xs:enumeration value="NO_SUCH_UNITLOAD"/>
+     <xs:enumeration value="NO_SUITABLE_LOCATION"/>
+     <xs:enumeration value="NO_SUITABLE_LOT"/>
+     <xs:enumeration value="ORDER_ALREADY_STARTED"/>
+     <xs:enumeration value="ORDER_ALREADY_FINISHED"/>
+     <xs:enumeration value="ORDER_CANNOT_BE_STARTED"/>
+     <xs:enumeration value="ORDER_CANNOT_BE_CREATED"/>
+     <xs:enumeration value="PICKORDER_CANNOT_BE_CREATED"/>
+     <xs:enumeration value="ORDER_CONSTRAINT_VIOLATED"/>
+     <xs:enumeration value="ORDER_NOT_FINIHED"/>
+     <xs:enumeration value="ORDER_NOT_FINISHED"/>
+     <xs:enumeration value="PICKED_TOO_MANY"/>
+     <xs:enumeration value="PICKREQUEST_ALREDAY_FINISHED"/>
+     <xs:enumeration value="PICKREQUEST_CONSTRAINT_VIOLATED"/>
+     <xs:enumeration value="PICKREQUEST_CREATION"/>
+     <xs:enumeration value="PICKREQUEST_NOT_FINISHED"/>
+     <xs:enumeration value="PICK_POSITION_CONTRAINT_VIOLATED"/>
+     <xs:enumeration value="PICK_UNEXPECTED_NULL"/>
+     <xs:enumeration value="PICK_WRONG_SOURCE"/>
+     <xs:enumeration value="PICK_WRONG_AMOUNT"/>
+     <xs:enumeration value="POSITION_ALREADY_ASSIGNED_ADVICE"/>
+     <xs:enumeration value="POSITION_NO_ADVICE"/>
+     <xs:enumeration value="REPLENISH_ALREADY_COMES"/>
+     <xs:enumeration value="REPLENISH_NOT_NEEDED"/>
+     <xs:enumeration value="STOCKUNIT_CONSTRAINT_VIOLATED"/>
+     <xs:enumeration value="STOCKUNIT_HAS_RESERVATION"/>
+     <xs:enumeration value="STOCKUNIT_IS_LOCKED"/>
+     <xs:enumeration value="STOCKUNIT_NO_LOT"/>
+     <xs:enumeration value="STOCKUNIT_TRANSFER_FAILED"/>
+     <xs:enumeration value="STOCKUNIT_TRANSFER_NOT_ALLOWED"/>
+     <xs:enumeration value="STORAGELOCATION_CONSTRAINT_VIOLATED"/>
+     <xs:enumeration value="STORAGE_ADD_TO_EXISTING"/>
+     <xs:enumeration value="STORAGE_FAILED"/>
+     <xs:enumeration value="STORAGE_NO_DESTINATION_FOUND"/>
+     <xs:enumeration value="STORAGE_WRONG_LOCATION_BUT_ALLOWED"/>
+     <xs:enumeration value="STORAGE_WRONG_LOCATION_NOT_ALLOWED"/>
+     <xs:enumeration value="UNIT_LOAD_CONSTRAINT_VIOLATED"/>
+     <xs:enumeration value="UNIT_LOAD_EXISTS"/>
+     <xs:enumeration value="UNSUFFICIENT_AMOUNT"/>
+     <xs:enumeration value="UNSUFFICIENT_RESERVED_AMOUNT"/>
+     <xs:enumeration value="CUSTOM_TEXT"/>
+     <xs:enumeration value="WRONG_STATE"/>
+     <xs:enumeration value="SHIPPING_MSG_NO_GOODSOUT"/>
+     <xs:enumeration value="SHIPPING_MSG_WRONG_GOODSOUT"/>
+     <xs:enumeration value="UNITLOAD_DELETE_ERROR_STORAGEREQUEST"/>
+     <xs:enumeration value="UNIT_LOAD_NOT_EMPTY"/>
+     <xs:enumeration value="GOODS_RECEIPT_NOT_FINISHED"/>
+     <xs:enumeration value="GOODS_RECEIPT_STOCK_ADDED"/>
+     <xs:enumeration value="WRONG_ITEMDATA"/>
+     <xs:enumeration value="SERIAL_ALREADY_EXISTS"/>
+    </xs:restriction>
+   </xs:simpleType>
+   <xs:simpleType name="serviceExceptionKey">
+    <xs:restriction base="xs:string">
+     <xs:enumeration value="NO_ENTITY_WITH_ID"/>
+     <xs:enumeration value="NO_ENTITY_WITH_NAME"/>
+     <xs:enumeration value="LOGIN_FAILED"/>
+     <xs:enumeration value="NO_CLIENT_WITH_NUMBER"/>
+     <xs:enumeration value="NO_CLIENT_WITH_NAME"/>
+     <xs:enumeration value="CONFIG_KEY_NOT_UNIQUE"/>
+     <xs:enumeration value="USER_NAME_NOT_UNIQUE"/>
+     <xs:enumeration value="NO_USER_WITH_USERNAME"/>
+     <xs:enumeration value="ROLE_ALREADY_EXISTS"/>
+     <xs:enumeration value="NO_ROLE_WITH_NAME"/>
+     <xs:enumeration value="ITEMDATA_NUMBER_NOT_UNIQUE"/>
+     <xs:enumeration value="NO_ITEMDATA_WITH_ITEMNUMER"/>
+     <xs:enumeration value="DELETE_ITEMDATA_VIOLATES_FOREIGNKEY"/>
+     <xs:enumeration value="ITEMDATA_SCALE_VIOLATION"/>
+     <xs:enumeration value="NO_UNITLOAD_WITH_LABEL"/>
+     <xs:enumeration value="UNITLOAD_LABELID_NOT_UNIQUE"/>
+     <xs:enumeration value="UNITLOADTYPE_NAME_NOT_UNIQUE"/>
+     <xs:enumeration value="NO_UNITLOADTYPE_WITH_NAME"/>
+     <xs:enumeration value="STORAGELOCATION_NAME_NOT_UNIQUE"/>
+     <xs:enumeration value="NO_STORAGELOCATION_WITH_NAME"/>
+     <xs:enumeration value="AREA_NAME_NOT_UNIQUE"/>
+     <xs:enumeration value="NO_AREA_WITH_NAME"/>
+     <xs:enumeration value="NO_DOCUMENT_WITH_NAME"/>
+     <xs:enumeration value="DOCUMENT_ALREADY_EXISTS"/>
+     <xs:enumeration value="PICKINGREQUEST_NUMBER_NOT_UNIQUE"/>
+     <xs:enumeration value="NO_PICKINGREQUEST_WITH_NUMBER"/>
+     <xs:enumeration value="NO_TRANSPORTREQUEST_WITH_NUMBER"/>
+     <xs:enumeration value="NO_GOODSOUTREQUEST_WITH_NUMBER"/>
+     <xs:enumeration value="NO_GOODSOUTREQUEST_WITH_PICKINGREQUEST"/>
+     <xs:enumeration value="GOODSOUTREQUEST_EXISTS"/>
+     <xs:enumeration value="PLUGINCONFIGURATION_ALREADY_EXISTS"/>
+     <xs:enumeration value="BASIC_ENTITY_CANNOT_BE_MERGED"/>
+     <xs:enumeration value="ZONE_NAME_NOT_UNIQUE"/>
+     <xs:enumeration value="NO_ZONE_WITH_NAME"/>
+    </xs:restriction>
+   </xs:simpleType>
+  </xs:schema>
+  </types>
+  <message name="ManageInventory_createItemDataResponse">
+    <part name="return" type="xsd:boolean">
+    </part>
+  </message>
+  <message name="ManageInventory_createItemData">
+    <part name="username" type="xsd:string">
+    </part>
+    <part name="password" type="xsd:string">
+    </part>
+    <part name="clientRef" type="xsd:string">
+    </part>
+    <part name="articleRef" type="xsd:string">
+    </part>
+  </message>
+  <message name="FacadeException">
+    <part name="FacadeException" element="tns:FacadeException">
+    </part>
+  </message>
+  <message name="ManageInventory_updateItemReferenceResponse">
+    <part name="return" type="xsd:boolean">
+    </part>
+  </message>
+  <message name="ManageInventory_createStockUnitOnStorageLocation">
+    <part name="username" type="xsd:string">
+    </part>
+    <part name="password" type="xsd:string">
+    </part>
+    <part name="clientRef" type="xsd:string">
+    </part>
+    <part name="slName" type="xsd:string">
+    </part>
+    <part name="articleRef" type="xsd:string">
+    </part>
+    <part name="lotRef" type="xsd:string">
+    </part>
+    <part name="amount" type="xsd:decimal">
+    </part>
+    <part name="unitLoadRef" type="xsd:string">
+    </part>
+  </message>
+  <message name="ManageInventory_deleteItemDataResponse">
+    <part name="return" type="xsd:boolean">
+    </part>
+  </message>
+  <message name="InventoryException">
+    <part name="InventoryException" element="tns:InventoryException">
+    </part>
+  </message>
+  <message name="EntityNotFoundException">
+    <part name="EntityNotFoundException" element="tns:EntityNotFoundException">
+    </part>
+  </message>
+  <message name="ManageInventory_createStockUnitOnStorageLocationResponse">
+  </message>
+  <message name="ManageInventory_createAvisResponse">
+    <part name="return" type="xsd:boolean">
+    </part>
+  </message>
+  <message name="ManageInventory_createAvis">
+    <part name="username" type="xsd:string">
+    </part>
+    <part name="password" type="xsd:string">
+    </part>
+    <part name="clientRef" type="xsd:string">
+    </part>
+    <part name="articleRef" type="xsd:string">
+    </part>
+    <part name="batchRef" type="xsd:string">
+    </part>
+    <part name="amount" type="xsd:decimal">
+    </part>
+    <part name="expectedDelivery" type="xsd:dateTime">
+    </part>
+    <part name="bestBeforeEnd" type="xsd:dateTime">
+    </part>
+    <part name="useNotBefore" type="xsd:dateTime">
+    </part>
+    <part name="expireBatch" type="xsd:boolean">
+    </part>
+  </message>
+  <message name="ManageInventory_updateItemReference">
+    <part name="username" type="xsd:string">
+    </part>
+    <part name="password" type="xsd:string">
+    </part>
+    <part name="clientRef" type="xsd:string">
+    </part>
+    <part name="existingRef" type="xsd:string">
+    </part>
+    <part name="newRef" type="xsd:string">
+    </part>
+  </message>
+  <message name="ManageInventory_deleteItemData">
+    <part name="username" type="xsd:string">
+    </part>
+    <part name="password" type="xsd:string">
+    </part>
+    <part name="clientRef" type="xsd:string">
+    </part>
+    <part name="articleRef" type="xsd:string">
+    </part>
+  </message>
+  <portType name="ManageInventory">
+    <operation name="createAvis" parameterOrder="username password clientRef articleRef batchRef amount expectedDelivery bestBeforeEnd useNotBefore expireBatch">
+      <input message="tns:ManageInventory_createAvis">
+    </input>
+      <output message="tns:ManageInventory_createAvisResponse">
+    </output>
+    </operation>
+    <operation name="createItemData" parameterOrder="username password clientRef articleRef">
+      <input message="tns:ManageInventory_createItemData">
+    </input>
+      <output message="tns:ManageInventory_createItemDataResponse">
+    </output>
+      <fault name="InventoryException" message="tns:InventoryException">
+    </fault>
+    </operation>
+    <operation name="createStockUnitOnStorageLocation" parameterOrder="username password clientRef slName articleRef lotRef amount unitLoadRef">
+      <input message="tns:ManageInventory_createStockUnitOnStorageLocation">
+    </input>
+      <output message="tns:ManageInventory_createStockUnitOnStorageLocationResponse">
+    </output>
+      <fault name="EntityNotFoundException" message="tns:EntityNotFoundException">
+    </fault>
+      <fault name="InventoryException" message="tns:InventoryException">
+    </fault>
+      <fault name="FacadeException" message="tns:FacadeException">
+    </fault>
+    </operation>
+    <operation name="deleteItemData" parameterOrder="username password clientRef articleRef">
+      <input message="tns:ManageInventory_deleteItemData">
+    </input>
+      <output message="tns:ManageInventory_deleteItemDataResponse">
+    </output>
+    </operation>
+    <operation name="updateItemReference" parameterOrder="username password clientRef existingRef newRef">
+      <input message="tns:ManageInventory_updateItemReference">
+    </input>
+      <output message="tns:ManageInventory_updateItemReferenceResponse">
+    </output>
+    </operation>
+  </portType>
+  <binding name="ManageInventoryBinding" type="tns:ManageInventory">
+    <soap:binding style="rpc" transport="http://schemas.xmlsoap.org/soap/http"/>
+    <operation name="createAvis">
+      <soap:operation soapAction=""/>
+      <input>
+        <soap:body use="literal" namespace="http://ws.inventory.los.linogistix.de/"/>
+      </input>
+      <output>
+        <soap:body use="literal" namespace="http://ws.inventory.los.linogistix.de/"/>
+      </output>
+    </operation>
+    <operation name="createItemData">
+      <soap:operation soapAction=""/>
+      <input>
+        <soap:body use="literal" namespace="http://ws.inventory.los.linogistix.de/"/>
+      </input>
+      <output>
+        <soap:body use="literal" namespace="http://ws.inventory.los.linogistix.de/"/>
+      </output>
+      <fault name="InventoryException">
+        <soap:fault name="InventoryException" use="literal"/>
+      </fault>
+    </operation>
+    <operation name="createStockUnitOnStorageLocation">
+      <soap:operation soapAction=""/>
+      <input>
+        <soap:body use="literal" namespace="http://ws.inventory.los.linogistix.de/"/>
+      </input>
+      <output>
+        <soap:body use="literal" namespace="http://ws.inventory.los.linogistix.de/"/>
+      </output>
+      <fault name="EntityNotFoundException">
+        <soap:fault name="EntityNotFoundException" use="literal"/>
+      </fault>
+      <fault name="InventoryException">
+        <soap:fault name="InventoryException" use="literal"/>
+      </fault>
+      <fault name="FacadeException">
+        <soap:fault name="FacadeException" use="literal"/>
+      </fault>
+    </operation>
+    <operation name="deleteItemData">
+      <soap:operation soapAction=""/>
+      <input>
+        <soap:body use="literal" namespace="http://ws.inventory.los.linogistix.de/"/>
+      </input>
+      <output>
+        <soap:body use="literal" namespace="http://ws.inventory.los.linogistix.de/"/>
+      </output>
+    </operation>
+    <operation name="updateItemReference">
+      <soap:operation soapAction=""/>
+      <input>
+        <soap:body use="literal" namespace="http://ws.inventory.los.linogistix.de/"/>
+      </input>
+      <output>
+        <soap:body use="literal" namespace="http://ws.inventory.los.linogistix.de/"/>
+      </output>
+    </operation>
+  </binding>
+  <service name="ManageInventoryBeanService">
+    <port name="ManageInventoryBeanPort" binding="tns:ManageInventoryBinding">
+      <soap:address location="http://127.0.0.1:8080/webservice/ManageInventoryBean"/>
+    </port>
+  </service>
+</definitions>

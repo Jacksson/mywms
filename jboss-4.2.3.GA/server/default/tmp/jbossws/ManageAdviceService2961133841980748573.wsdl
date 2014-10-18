@@ -1,0 +1,259 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<definitions name='ManageAdviceService' targetNamespace='http://advice.management.los.linogistix.de' xmlns='http://schemas.xmlsoap.org/wsdl/' xmlns:soap='http://schemas.xmlsoap.org/wsdl/soap/' xmlns:tns='http://advice.management.los.linogistix.de' xmlns:xsd='http://www.w3.org/2001/XMLSchema'>
+ <types>
+  <xs:schema targetNamespace='http://advice.management.los.linogistix.de' version='1.0' xmlns:tns='http://advice.management.los.linogistix.de' xmlns:xs='http://www.w3.org/2001/XMLSchema'>
+   <xs:element name='ManageAdviceWSFault' type='tns:ManageAdviceWSFault'/>
+   <xs:element name='adviceUnitLoad' nillable='true' type='tns:AdviceUnitLoadRequest'/>
+   <xs:element name='adviceUnitLoadResponse' nillable='true' type='xs:string'/>
+   <xs:element name='commitUnitLoadAdvice' nillable='true' type='xs:string'/>
+   <xs:element name='commitUnitLoadAdviceResponse' nillable='true' type='tns:CommitAdviceResponse'/>
+   <xs:element name='deleteAdvice' nillable='true' type='tns:DeleteAdviceRequest'/>
+   <xs:element name='getAdviceForUnitLoad' nillable='true' type='xs:string'/>
+   <xs:element name='getAdviceForUnitLoadResponse' nillable='true' type='tns:AdviceUnitLoadResponse'/>
+   <xs:element name='rejectUnitLoadAdvice' nillable='true' type='tns:RejectAdviceRequest'/>
+   <xs:element name='updateAdvice' nillable='true' type='tns:UpdateAdviceRequest'/>
+   <xs:element name='updateAdviceResponse' nillable='true' type='xs:string'/>
+   <xs:complexType name='DeleteAdviceRequest'>
+    <xs:sequence>
+     <xs:element minOccurs='0' name='adviceNumber' type='xs:string'/>
+     <xs:element name='clientNumber' type='xs:string'/>
+     <xs:element minOccurs='0' name='externalAdviceNumber' type='xs:string'/>
+     <xs:element minOccurs='0' name='externalId' type='xs:string'/>
+    </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name='ManageAdviceWSFault'>
+    <xs:sequence>
+     <xs:element minOccurs='0' name='errorCode' type='tns:manageAdviceErrorCodes'/>
+     <xs:element minOccurs='0' name='message' type='xs:string'/>
+    </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name='AdviceUnitLoadRequest'>
+    <xs:sequence>
+     <xs:element name='clientNumber' type='xs:string'/>
+     <xs:element minOccurs='0' name='externalAdviceNumber' type='xs:string'/>
+     <xs:element minOccurs='0' name='relatedAdviceNumber' type='xs:string'/>
+     <xs:element name='labelId' type='xs:string'/>
+     <xs:element minOccurs='0' name='unitLoadType' type='xs:string'/>
+     <xs:element name='returns' type='xs:boolean'/>
+     <xs:element minOccurs='0' name='reasonForReturn' type='xs:string'/>
+     <xs:element maxOccurs='unbounded' minOccurs='0' name='stockUnitList' nillable='true' type='tns:StockUnitElement'/>
+    </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name='StockUnitElement'>
+    <xs:sequence>
+     <xs:element name='itemDataNumber' type='xs:string'/>
+     <xs:element name='notifiedAmount' type='xs:decimal'/>
+     <xs:element minOccurs='0' name='lotNumber' type='xs:string'/>
+     <xs:element minOccurs='0' name='bestBeforeEnd' type='xs:dateTime'/>
+     <xs:element minOccurs='0' name='useNotBefore' type='xs:dateTime'/>
+    </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name='AdviceUnitLoadResponse'>
+    <xs:sequence>
+     <xs:element minOccurs='0' name='adviceNumber' type='xs:string'/>
+     <xs:element minOccurs='0' name='externalNumber' type='xs:string'/>
+     <xs:element name='clientNumber' type='xs:string'/>
+     <xs:element minOccurs='0' name='relatedAdvice' type='xs:string'/>
+     <xs:element name='labelId' type='xs:string'/>
+     <xs:element minOccurs='0' name='unitLoadType' type='xs:string'/>
+     <xs:element name='returns' type='xs:boolean'/>
+     <xs:element minOccurs='0' name='reasonForReturn' type='xs:string'/>
+     <xs:element maxOccurs='unbounded' minOccurs='0' name='stockUnitList' nillable='true' type='tns:StockUnitElement'/>
+    </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name='CommitAdviceResponse'>
+    <xs:sequence>
+     <xs:element minOccurs='0' name='message' type='xs:string'/>
+     <xs:element name='error' type='xs:boolean'/>
+    </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name='RejectAdviceRequest'>
+    <xs:sequence>
+     <xs:element name='adviceNumber' type='xs:string'/>
+     <xs:element minOccurs='0' name='reason' type='xs:string'/>
+    </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name='UpdateAdviceRequest'>
+    <xs:sequence>
+     <xs:element minOccurs='0' name='additionalContent' type='xs:string'/>
+     <xs:element minOccurs='0' name='adviceNumber' type='xs:string'/>
+     <xs:element name='clientNumber' type='xs:string'/>
+     <xs:element minOccurs='0' name='expectedDelivery' type='xs:dateTime'/>
+     <xs:element minOccurs='0' name='externalAdviceNumber' type='xs:string'/>
+     <xs:element minOccurs='0' name='externalId' type='xs:string'/>
+     <xs:element name='itemNumber' type='xs:string'/>
+     <xs:element minOccurs='0' name='lotNumber' type='xs:string'/>
+     <xs:element name='notifiedAmount' type='xs:decimal'/>
+    </xs:sequence>
+   </xs:complexType>
+   <xs:simpleType name='manageAdviceErrorCodes'>
+    <xs:restriction base='xs:string'>
+     <xs:enumeration value='UNAUTHORIZED_CALLER'/>
+     <xs:enumeration value='ERROR_UNKNOWN_CLIENT'/>
+     <xs:enumeration value='ERROR_LABELID_NULL'/>
+     <xs:enumeration value='ERROR_UNKNOWN_ADVICE'/>
+     <xs:enumeration value='ERROR_UNKNOWN_UNITLOADTYPE'/>
+     <xs:enumeration value='ERROR_UNKNOWN_ITEMNUMBER'/>
+     <xs:enumeration value='ERROR_NOTIFIEDAMOUNT_NULL'/>
+     <xs:enumeration value='ERROR_NOTIFIEDAMOUNT_NEGATIVE'/>
+     <xs:enumeration value='ERROR_NO_ADVICE_FOR_LABEL'/>
+     <xs:enumeration value='ERROR_DUPLICATE_UNITLOAD_ADVICE'/>
+     <xs:enumeration value='ERROR_NO_ADVICE_WITH_NUMBER'/>
+     <xs:enumeration value='ERROR_INVALID_ADVICE_STATE'/>
+     <xs:enumeration value='ERROR_FINISHING_ADVICE'/>
+     <xs:enumeration value='ERROR_CREATION'/>
+     <xs:enumeration value='ERROR_ADVICE_FINISHED'/>
+     <xs:enumeration value='ERROR_ADVICE_STARTED'/>
+     <xs:enumeration value='ERROR_DELETE'/>
+    </xs:restriction>
+   </xs:simpleType>
+  </xs:schema>
+ </types>
+ <message name='ManageAdvice_adviceUnitLoad'>
+  <part element='tns:adviceUnitLoad' name='adviceUnitLoad'/>
+ </message>
+ <message name='ManageAdvice_adviceUnitLoadResponse'>
+  <part element='tns:adviceUnitLoadResponse' name='adviceUnitLoadResponse'/>
+ </message>
+ <message name='ManageAdviceWSFault'>
+  <part element='tns:ManageAdviceWSFault' name='ManageAdviceWSFault'/>
+ </message>
+ <message name='ManageAdvice_commitUnitLoadAdvice'>
+  <part element='tns:commitUnitLoadAdvice' name='commitUnitLoadAdvice'/>
+ </message>
+ <message name='ManageAdvice_commitUnitLoadAdviceResponse'>
+  <part element='tns:commitUnitLoadAdviceResponse' name='commitUnitLoadAdviceResponse'/>
+ </message>
+ <message name='ManageAdvice_deleteAdvice'>
+  <part element='tns:deleteAdvice' name='deleteAdvice'/>
+ </message>
+ <message name='ManageAdvice_deleteAdviceResponse'/>
+ <message name='ManageAdvice_getAdviceForUnitLoad'>
+  <part element='tns:getAdviceForUnitLoad' name='getAdviceForUnitLoad'/>
+ </message>
+ <message name='ManageAdvice_getAdviceForUnitLoadResponse'>
+  <part element='tns:getAdviceForUnitLoadResponse' name='getAdviceForUnitLoadResponse'/>
+ </message>
+ <message name='ManageAdvice_rejectUnitLoadAdvice'>
+  <part element='tns:rejectUnitLoadAdvice' name='rejectUnitLoadAdvice'/>
+ </message>
+ <message name='ManageAdvice_rejectUnitLoadAdviceResponse'/>
+ <message name='ManageAdvice_updateAdvice'>
+  <part element='tns:updateAdvice' name='updateAdvice'/>
+ </message>
+ <message name='ManageAdvice_updateAdviceResponse'>
+  <part element='tns:updateAdviceResponse' name='updateAdviceResponse'/>
+ </message>
+ <portType name='ManageAdvice'>
+  <operation name='adviceUnitLoad' parameterOrder='adviceUnitLoad'>
+   <input message='tns:ManageAdvice_adviceUnitLoad'/>
+   <output message='tns:ManageAdvice_adviceUnitLoadResponse'/>
+   <fault message='tns:ManageAdviceWSFault' name='ManageAdviceWSFault'/>
+  </operation>
+  <operation name='commitUnitLoadAdvice' parameterOrder='commitUnitLoadAdvice'>
+   <input message='tns:ManageAdvice_commitUnitLoadAdvice'/>
+   <output message='tns:ManageAdvice_commitUnitLoadAdviceResponse'/>
+   <fault message='tns:ManageAdviceWSFault' name='ManageAdviceWSFault'/>
+  </operation>
+  <operation name='deleteAdvice' parameterOrder='deleteAdvice'>
+   <input message='tns:ManageAdvice_deleteAdvice'/>
+   <output message='tns:ManageAdvice_deleteAdviceResponse'/>
+   <fault message='tns:ManageAdviceWSFault' name='ManageAdviceWSFault'/>
+  </operation>
+  <operation name='getAdviceForUnitLoad' parameterOrder='getAdviceForUnitLoad'>
+   <input message='tns:ManageAdvice_getAdviceForUnitLoad'/>
+   <output message='tns:ManageAdvice_getAdviceForUnitLoadResponse'/>
+   <fault message='tns:ManageAdviceWSFault' name='ManageAdviceWSFault'/>
+  </operation>
+  <operation name='rejectUnitLoadAdvice' parameterOrder='rejectUnitLoadAdvice'>
+   <input message='tns:ManageAdvice_rejectUnitLoadAdvice'/>
+   <output message='tns:ManageAdvice_rejectUnitLoadAdviceResponse'/>
+   <fault message='tns:ManageAdviceWSFault' name='ManageAdviceWSFault'/>
+  </operation>
+  <operation name='updateAdvice' parameterOrder='updateAdvice'>
+   <input message='tns:ManageAdvice_updateAdvice'/>
+   <output message='tns:ManageAdvice_updateAdviceResponse'/>
+   <fault message='tns:ManageAdviceWSFault' name='ManageAdviceWSFault'/>
+  </operation>
+ </portType>
+ <binding name='ManageAdviceBinding' type='tns:ManageAdvice'>
+  <soap:binding style='document' transport='http://schemas.xmlsoap.org/soap/http'/>
+  <operation name='adviceUnitLoad'>
+   <soap:operation soapAction=''/>
+   <input>
+    <soap:body use='literal'/>
+   </input>
+   <output>
+    <soap:body use='literal'/>
+   </output>
+   <fault name='ManageAdviceWSFault'>
+    <soap:fault name='ManageAdviceWSFault' use='literal'/>
+   </fault>
+  </operation>
+  <operation name='commitUnitLoadAdvice'>
+   <soap:operation soapAction=''/>
+   <input>
+    <soap:body use='literal'/>
+   </input>
+   <output>
+    <soap:body use='literal'/>
+   </output>
+   <fault name='ManageAdviceWSFault'>
+    <soap:fault name='ManageAdviceWSFault' use='literal'/>
+   </fault>
+  </operation>
+  <operation name='deleteAdvice'>
+   <soap:operation soapAction=''/>
+   <input>
+    <soap:body use='literal'/>
+   </input>
+   <output>
+    <soap:body use='literal'/>
+   </output>
+   <fault name='ManageAdviceWSFault'>
+    <soap:fault name='ManageAdviceWSFault' use='literal'/>
+   </fault>
+  </operation>
+  <operation name='getAdviceForUnitLoad'>
+   <soap:operation soapAction=''/>
+   <input>
+    <soap:body use='literal'/>
+   </input>
+   <output>
+    <soap:body use='literal'/>
+   </output>
+   <fault name='ManageAdviceWSFault'>
+    <soap:fault name='ManageAdviceWSFault' use='literal'/>
+   </fault>
+  </operation>
+  <operation name='rejectUnitLoadAdvice'>
+   <soap:operation soapAction=''/>
+   <input>
+    <soap:body use='literal'/>
+   </input>
+   <output>
+    <soap:body use='literal'/>
+   </output>
+   <fault name='ManageAdviceWSFault'>
+    <soap:fault name='ManageAdviceWSFault' use='literal'/>
+   </fault>
+  </operation>
+  <operation name='updateAdvice'>
+   <soap:operation soapAction=''/>
+   <input>
+    <soap:body use='literal'/>
+   </input>
+   <output>
+    <soap:body use='literal'/>
+   </output>
+   <fault name='ManageAdviceWSFault'>
+    <soap:fault name='ManageAdviceWSFault' use='literal'/>
+   </fault>
+  </operation>
+ </binding>
+ <service name='ManageAdviceService'>
+  <port binding='tns:ManageAdviceBinding' name='ManageAdvicePort'>
+   <soap:address location='http://127.0.0.1:8080/webservice/ManageAdviceWSBean'/>
+  </port>
+ </service>
+</definitions>

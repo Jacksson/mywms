@@ -1,0 +1,75 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<definitions name='OrderBeanService' targetNamespace='http://ws.inventory.los.linogistix.de/' xmlns='http://schemas.xmlsoap.org/wsdl/' xmlns:ns1='http://com.linogistix/connector/wms/inventory' xmlns:soap='http://schemas.xmlsoap.org/wsdl/soap/' xmlns:tns='http://ws.inventory.los.linogistix.de/' xmlns:xsd='http://www.w3.org/2001/XMLSchema'>
+ <types>
+  <xs:schema targetNamespace='http://ws.inventory.los.linogistix.de/' version='1.0' xmlns:tns='http://ws.inventory.los.linogistix.de/' xmlns:xs='http://www.w3.org/2001/XMLSchema'>
+   <xs:element name='FacadeException' type='tns:FacadeException'/>
+   <xs:complexType name='FacadeException'>
+    <xs:sequence>
+     <xs:element minOccurs='0' name='bundleName' type='xs:string'/>
+     <xs:element minOccurs='0' name='bundleResolver' type='xs:string'/>
+     <xs:element minOccurs='0' name='key' type='xs:string'/>
+     <xs:element minOccurs='0' name='message' type='xs:string'/>
+     <xs:element maxOccurs='unbounded' minOccurs='0' name='parameters' type='xs:anyType'/>
+    </xs:sequence>
+   </xs:complexType>
+  </xs:schema>
+  <xs:schema targetNamespace='http://com.linogistix/connector/wms/inventory' version='1.0' xmlns:tns='http://com.linogistix/connector/wms/inventory' xmlns:xs='http://www.w3.org/2001/XMLSchema'>
+   <xs:complexType name='OrderPositionTO'>
+    <xs:sequence>
+     <xs:element minOccurs='0' name='clientRef' type='xs:string'/>
+     <xs:element minOccurs='0' name='batchRef' type='xs:string'/>
+     <xs:element minOccurs='0' name='articleRef' type='xs:string'/>
+     <xs:element minOccurs='0' name='amount' type='xs:decimal'/>
+    </xs:sequence>
+   </xs:complexType>
+   <xs:complexType final='#all' name='OrderPositionTOArray'>
+    <xs:sequence>
+     <xs:element maxOccurs='unbounded' minOccurs='0' name='item' nillable='true' type='tns:OrderPositionTO'/>
+    </xs:sequence>
+   </xs:complexType>
+  </xs:schema>
+ </types>
+ <message name='Order_order'>
+  <part name='username' type='xsd:string'/>
+  <part name='password' type='xsd:string'/>
+  <part name='clientRef' type='xsd:string'/>
+  <part name='orderRef' type='xsd:string'/>
+  <part name='positions' type='ns1:OrderPositionTOArray'/>
+  <part name='documentUrl' type='xsd:string'/>
+  <part name='labelUrl' type='xsd:string'/>
+  <part name='destination' type='xsd:string'/>
+ </message>
+ <message name='Order_orderResponse'>
+  <part name='return' type='xsd:boolean'/>
+ </message>
+ <message name='FacadeException'>
+  <part element='tns:FacadeException' name='FacadeException'/>
+ </message>
+ <portType name='Order'>
+  <operation name='order' parameterOrder='username password clientRef orderRef positions documentUrl labelUrl destination'>
+   <input message='tns:Order_order'/>
+   <output message='tns:Order_orderResponse'/>
+   <fault message='tns:FacadeException' name='FacadeException'/>
+  </operation>
+ </portType>
+ <binding name='OrderBinding' type='tns:Order'>
+  <soap:binding style='rpc' transport='http://schemas.xmlsoap.org/soap/http'/>
+  <operation name='order'>
+   <soap:operation soapAction=''/>
+   <input>
+    <soap:body namespace='http://ws.inventory.los.linogistix.de/' use='literal'/>
+   </input>
+   <output>
+    <soap:body namespace='http://ws.inventory.los.linogistix.de/' use='literal'/>
+   </output>
+   <fault name='FacadeException'>
+    <soap:fault name='FacadeException' use='literal'/>
+   </fault>
+  </operation>
+ </binding>
+ <service name='OrderBeanService'>
+  <port binding='tns:OrderBinding' name='OrderBeanPort'>
+   <soap:address location='http://127.0.0.1:8080/webservice/OrderBean'/>
+  </port>
+ </service>
+</definitions>

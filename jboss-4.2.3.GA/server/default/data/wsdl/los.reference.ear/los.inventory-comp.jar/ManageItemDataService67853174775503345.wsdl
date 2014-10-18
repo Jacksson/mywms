@@ -1,0 +1,228 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<definitions name="ManageItemDataService" targetNamespace="http://itemdata.management.los.linogistix.de" xmlns="http://schemas.xmlsoap.org/wsdl/" xmlns:tns="http://itemdata.management.los.linogistix.de" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/">
+  <types>
+    <xs:schema targetNamespace="http://itemdata.management.los.linogistix.de" version="1.0" xmlns:tns="http://itemdata.management.los.linogistix.de" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+   <xs:element name="ManageItemDataWSFault" type="tns:ManageItemDataWSFault"/>
+   <xs:element name="deleteBom" nillable="true" type="tns:DeleteItemDataRequest"/>
+   <xs:element name="deleteItemData" nillable="true" type="tns:DeleteItemDataRequest"/>
+   <xs:element name="getItemNumbersResponse" nillable="true" type="tns:clientItemNumberTOArray"/>
+   <xs:element name="updateBom" nillable="true" type="tns:UpdateBomRequest"/>
+   <xs:element name="updateItemData" nillable="true" type="tns:UpdateItemDataRequest"/>
+   <xs:complexType name="UpdateItemDataRequest">
+    <xs:sequence>
+     <xs:element name="clientNumber" type="xs:string"/>
+     <xs:element name="name" type="xs:string"/>
+     <xs:element name="number" type="xs:string"/>
+     <xs:element minOccurs="0" name="description" type="xs:string"/>
+     <xs:element default="0" name="safetyStock" type="xs:int"/>
+     <xs:element name="lotMandatory" type="xs:boolean"/>
+     <xs:element name="adviceMandatory" type="xs:boolean"/>
+     <xs:element default="NO_RECORD" minOccurs="0" name="serialNoRecordType" type="tns:serialNoRecordType"/>
+     <xs:element name="handlingUnit" type="xs:string"/>
+     <xs:element default="0" name="scale" type="xs:int"/>
+     <xs:element maxOccurs="unbounded" minOccurs="0" name="eanCodes" type="xs:string"/>
+    </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="ManageItemDataWSFault">
+    <xs:sequence>
+     <xs:element minOccurs="0" name="errorCode" type="tns:manageItemDataErrorCodes"/>
+     <xs:element minOccurs="0" name="message" type="xs:string"/>
+    </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="DeleteItemDataRequest">
+    <xs:sequence>
+     <xs:element minOccurs="0" name="clientNumber" type="xs:string"/>
+     <xs:element minOccurs="0" name="itemNumber" type="xs:string"/>
+    </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="clientItemNumberTO">
+    <xs:sequence>
+     <xs:element minOccurs="0" name="clientNumber" type="xs:string"/>
+     <xs:element minOccurs="0" name="itemNumber" type="xs:string"/>
+    </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="UpdateBomRequest">
+    <xs:sequence>
+     <xs:element default="0.0" minOccurs="0" name="amount" type="xs:decimal"/>
+     <xs:element name="childNumber" type="xs:string"/>
+     <xs:element name="clientNumber" type="xs:string"/>
+     <xs:element name="parentNumber" type="xs:string"/>
+     <xs:element default="true" name="pickable" type="xs:boolean"/>
+    </xs:sequence>
+   </xs:complexType>
+   <xs:simpleType name="serialNoRecordType">
+    <xs:restriction base="xs:string">
+     <xs:enumeration value="NO_RECORD"/>
+     <xs:enumeration value="GOODS_OUT_RECORD"/>
+     <xs:enumeration value="ALWAYS_RECORD"/>
+    </xs:restriction>
+   </xs:simpleType>
+   <xs:simpleType name="manageItemDataErrorCodes">
+    <xs:restriction base="xs:string">
+     <xs:enumeration value="ERROR_UNKNOWN_CLIENT"/>
+     <xs:enumeration value="ERROR_UNKNOWN_ITEMUNIT"/>
+     <xs:enumeration value="UPDATE_ERROR_ITEMUNIT_STOCK_EXIST"/>
+     <xs:enumeration value="UPDATE_ERROR_SCALE_STOCK_EXIST"/>
+     <xs:enumeration value="UPDATE_ERROR_LOTMANDATORY_STOCK_EXIST"/>
+     <xs:enumeration value="UPDATE_ERROR_SERIALRECORDTYPE_STOCK_EXIST"/>
+     <xs:enumeration value="DELETE_ERROR_UNKNOWN_ITEMNUMBER"/>
+     <xs:enumeration value="DELETE_ERROR_STOCK_EXIST"/>
+     <xs:enumeration value="UNAUTHORIZED_CALLER"/>
+     <xs:enumeration value="ERROR_ITEMNAME_NULL"/>
+     <xs:enumeration value="ERROR_UNKNOWN_ITEMDATA"/>
+     <xs:enumeration value="ERROR_UPDATE_BOM"/>
+     <xs:enumeration value="ERROR_DELETE"/>
+    </xs:restriction>
+   </xs:simpleType>
+   <xs:complexType final="#all" name="clientItemNumberTOArray">
+    <xs:sequence>
+     <xs:element maxOccurs="unbounded" minOccurs="0" name="item" nillable="true" type="tns:clientItemNumberTO"/>
+    </xs:sequence>
+   </xs:complexType>
+  </xs:schema>
+  </types>
+  <message name="ManageItemData_updateItemData">
+    <part name="updateItemData" element="tns:updateItemData">
+    </part>
+  </message>
+  <message name="ManageItemData_getItemNumbers">
+  </message>
+  <message name="ManageItemData_deleteBomResponse">
+  </message>
+  <message name="ManageItemData_deleteItemDataResponse">
+  </message>
+  <message name="ManageItemData_updateBom">
+    <part name="updateBom" element="tns:updateBom">
+    </part>
+  </message>
+  <message name="ManageItemData_updateItemDataResponse">
+  </message>
+  <message name="ManageItemData_updateBomResponse">
+  </message>
+  <message name="ManageItemData_deleteBom">
+    <part name="deleteBom" element="tns:deleteBom">
+    </part>
+  </message>
+  <message name="ManageItemData_getItemNumbersResponse">
+    <part name="getItemNumbersResponse" element="tns:getItemNumbersResponse">
+    </part>
+  </message>
+  <message name="ManageItemData_deleteItemData">
+    <part name="deleteItemData" element="tns:deleteItemData">
+    </part>
+  </message>
+  <message name="ManageItemDataWSFault">
+    <part name="ManageItemDataWSFault" element="tns:ManageItemDataWSFault">
+    </part>
+  </message>
+  <portType name="ManageItemData">
+    <operation name="deleteBom" parameterOrder="deleteBom">
+      <input message="tns:ManageItemData_deleteBom">
+    </input>
+      <output message="tns:ManageItemData_deleteBomResponse">
+    </output>
+      <fault name="ManageItemDataWSFault" message="tns:ManageItemDataWSFault">
+    </fault>
+    </operation>
+    <operation name="deleteItemData" parameterOrder="deleteItemData">
+      <input message="tns:ManageItemData_deleteItemData">
+    </input>
+      <output message="tns:ManageItemData_deleteItemDataResponse">
+    </output>
+      <fault name="ManageItemDataWSFault" message="tns:ManageItemDataWSFault">
+    </fault>
+    </operation>
+    <operation name="getItemNumbers">
+      <input message="tns:ManageItemData_getItemNumbers">
+    </input>
+      <output message="tns:ManageItemData_getItemNumbersResponse">
+    </output>
+      <fault name="ManageItemDataWSFault" message="tns:ManageItemDataWSFault">
+    </fault>
+    </operation>
+    <operation name="updateBom" parameterOrder="updateBom">
+      <input message="tns:ManageItemData_updateBom">
+    </input>
+      <output message="tns:ManageItemData_updateBomResponse">
+    </output>
+      <fault name="ManageItemDataWSFault" message="tns:ManageItemDataWSFault">
+    </fault>
+    </operation>
+    <operation name="updateItemData" parameterOrder="updateItemData">
+      <input message="tns:ManageItemData_updateItemData">
+    </input>
+      <output message="tns:ManageItemData_updateItemDataResponse">
+    </output>
+      <fault name="ManageItemDataWSFault" message="tns:ManageItemDataWSFault">
+    </fault>
+    </operation>
+  </portType>
+  <binding name="ManageItemDataBinding" type="tns:ManageItemData">
+    <soap:binding style="document" transport="http://schemas.xmlsoap.org/soap/http"/>
+    <operation name="deleteBom">
+      <soap:operation soapAction=""/>
+      <input>
+        <soap:body use="literal"/>
+      </input>
+      <output>
+        <soap:body use="literal"/>
+      </output>
+      <fault name="ManageItemDataWSFault">
+        <soap:fault name="ManageItemDataWSFault" use="literal"/>
+      </fault>
+    </operation>
+    <operation name="deleteItemData">
+      <soap:operation soapAction=""/>
+      <input>
+        <soap:body use="literal"/>
+      </input>
+      <output>
+        <soap:body use="literal"/>
+      </output>
+      <fault name="ManageItemDataWSFault">
+        <soap:fault name="ManageItemDataWSFault" use="literal"/>
+      </fault>
+    </operation>
+    <operation name="getItemNumbers">
+      <soap:operation soapAction=""/>
+      <input>
+        <soap:body use="literal"/>
+      </input>
+      <output>
+        <soap:body use="literal"/>
+      </output>
+      <fault name="ManageItemDataWSFault">
+        <soap:fault name="ManageItemDataWSFault" use="literal"/>
+      </fault>
+    </operation>
+    <operation name="updateBom">
+      <soap:operation soapAction=""/>
+      <input>
+        <soap:body use="literal"/>
+      </input>
+      <output>
+        <soap:body use="literal"/>
+      </output>
+      <fault name="ManageItemDataWSFault">
+        <soap:fault name="ManageItemDataWSFault" use="literal"/>
+      </fault>
+    </operation>
+    <operation name="updateItemData">
+      <soap:operation soapAction=""/>
+      <input>
+        <soap:body use="literal"/>
+      </input>
+      <output>
+        <soap:body use="literal"/>
+      </output>
+      <fault name="ManageItemDataWSFault">
+        <soap:fault name="ManageItemDataWSFault" use="literal"/>
+      </fault>
+    </operation>
+  </binding>
+  <service name="ManageItemDataService">
+    <port name="ManageItemDataPort" binding="tns:ManageItemDataBinding">
+      <soap:address location="http://127.0.0.1:8080/webservice/ManageItemDataWSBean"/>
+    </port>
+  </service>
+</definitions>

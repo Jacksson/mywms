@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<module codename="de.linogistix.reference">
+    <module_version install_time="1413062365609" last="true" origin="installer" specification_version="1.0">
+        <file crc="1301868538" name="config/Modules/de-linogistix-reference.xml"/>
+        <file crc="1648152772" name="modules/de-linogistix-reference.jar"/>
+    </module_version>
+</module>

@@ -1,0 +1,131 @@
+-------------------------------------------------------------------------------
+>Log Session: Saturday, October 11, 2014 4:19:30 PM COT
+>System Info: 
+  Product Version         = myWMS-LOS Client
+  Operating System        = Windows XP version 5.1 running on x86
+  Java; VM; Vendor        = 1.6.0_45; Java HotSpot(TM) Server VM 20.45-b01; Sun Microsystems Inc.
+  Runtime                 = Java(TM) SE Runtime Environment 1.6.0_45-b06
+  Java Home               = C:\Archivos de programa\Java\jdk1.6.0_45\jre
+  System Locale; Encoding = es_CO (los_reference); Cp1252
+  Home Directory          = C:\Documents and Settings\BlackHat
+  Current Directory       = C:\mywms\rich.client\los.reference
+  User Directory          = C:\mywms\rich.client\los.reference\build\testuserdir
+  Installation            = C:\mywms\rich.client\los.reference\build\cluster
+                            C:\mywms\rich.client\los.clientsuite\nbplatform\linogistix_clientsuite\ide12
+                            C:\mywms\rich.client\los.clientsuite\nbplatform\linogistix_clientsuite\linogistix_clientsuite
+                            C:\mywms\rich.client\los.clientsuite\nbplatform\linogistix_clientsuite\platform11
+                            C:\mywms\rich.client\los.clientsuite\nbplatform\linogistix_clientsuite\platform11
+  Boot & Ext. Classpath   = C:\Archivos de programa\Java\jdk1.6.0_45\jre\lib\resources.jar;C:\Archivos de programa\Java\jdk1.6.0_45\jre\lib\rt.jar;C:\Archivos de programa\Java\jdk1.6.0_45\jre\lib\sunrsasign.jar;C:\Archivos de programa\Java\jdk1.6.0_45\jre\lib\jsse.jar;C:\Archivos de programa\Java\jdk1.6.0_45\jre\lib\jce.jar;C:\Archivos de programa\Java\jdk1.6.0_45\jre\lib\charsets.jar;C:\Archivos de programa\Java\jdk1.6.0_45\jre\lib\modules\jdk.boot.jar;C:\Archivos de programa\Java\jdk1.6.0_45\jre\classes;C:\Archivos de programa\Java\jdk1.6.0_45\jre\lib\ext\dnsns.jar;C:\Archivos de programa\Java\jdk1.6.0_45\jre\lib\ext\localedata.jar;C:\Archivos de programa\Java\jdk1.6.0_45\jre\lib\ext\sunjce_provider.jar;C:\Archivos de programa\Java\jdk1.6.0_45\jre\lib\ext\sunmscapi.jar;C:\Archivos de programa\Java\jdk1.6.0_45\jre\lib\ext\sunpkcs11.jar
+  Application Classpath   = C:\mywms\rich.client\los.clientsuite\nbplatform\linogistix_clientsuite\platform11\lib\boot.jar;C:\mywms\rich.client\los.clientsuite\nbplatform\linogistix_clientsuite\platform11\lib\org-openide-modules.jar;C:\mywms\rich.client\los.clientsuite\nbplatform\linogistix_clientsuite\platform11\lib\org-openide-util.jar;C:\Archivos de programa\Java\jdk1.6.0_45\lib\dt.jar;C:\Archivos de programa\Java\jdk1.6.0_45\lib\tools.jar
+  Startup Classpath       = C:\mywms\rich.client\los.clientsuite\nbplatform\linogistix_clientsuite\platform11\core\core.jar;C:\mywms\rich.client\los.clientsuite\nbplatform\linogistix_clientsuite\platform11\core\org-openide-filesystems.jar;C:\mywms\rich.client\los.reference\build\cluster\core\locale\core_los_reference.jar;C:\mywms\rich.client\los.clientsuite\nbplatform\linogistix_clientsuite\linogistix_clientsuite\core\locale\core_linogistix_clientsuite.jar
+-------------------------------------------------------------------------------
+WARNING [org.netbeans.core.startup.NbEvents]: The extension C:\mywms\rich.client\los.clientsuite\nbplatform\linogistix_clientsuite\linogistix_clientsuite\modules\ext\activation.jar may be multiply loaded by modules: [C:\mywms\rich.client\los.clientsuite\nbplatform\linogistix_clientsuite\linogistix_clientsuite\modules\javax-jaxb.jar, C:\mywms\rich.client\los.clientsuite\nbplatform\linogistix_clientsuite\linogistix_clientsuite\modules\org-jboss.jar]; see: http://www.netbeans.org/download/dev/javadoc/org-openide-modules/org/openide/modules/doc-files/classpath.html#class-path
+WARNING [de.linogistix.common.userlogin.LoginServiceImpl]: state is not AUTENTICATED
+[]  11/10/2014 04:19:50 PM de.linogistix.common.userlogin.LoginServiceImpl validate
+ADVERTENCIA: state is not AUTENTICATED
+
+INFO [de.linogistix.common.services.J2EEServiceLocatorImpl]: login admin/****************
+INFO [de.linogistix.common.services.J2EEServiceLocatorImpl]: hostName=localhost:1099
+INFO [de.linogistix.common.services.J2EEServiceLocatorImpl]: applicationName=los.reference
+INFO [de.linogistix.common.services.J2EEServiceLocatorImpl]: workstationName=DESARROL-CFEEA7
+INFO [de.linogistix.common.services.J2EEServiceLocatorImpl]: login admin/****************
+INFO [de.linogistix.common.services.J2EEServiceLocatorImpl]: hostName=localhost:1099
+INFO [de.linogistix.common.services.J2EEServiceLocatorImpl]: applicationName=los.reference
+INFO [de.linogistix.common.services.J2EEServiceLocatorImpl]: workstationName=DESARROL-CFEEA7
+STDOUT [stdout]: ---- get Stateless Session Bean los.reference/LoginServiceBean/remote
+[]  login admin/****************
+[]  hostName=localhost:1099
+[]  applicationName=los.reference
+[]  workstationName=DESARROL-CFEEA7
+[]  login admin/****************
+[]  hostName=localhost:1099
+[]  applicationName=los.reference
+[]  workstationName=DESARROL-CFEEA7
+[]  ---- get Stateless Session Bean los.reference/LoginServiceBean/remote
+SEVERE [de.linogistix.common.services.J2EEServiceLocatorImpl]: javax.naming.CommunicationException: Could not obtain connection to any of these urls: localhost:1099 and discovery failed with error: javax.naming.CommunicationException: Receive timed out [Root exception is java.net.SocketTimeoutException: Receive timed out] [Root exception is javax.naming.CommunicationException: Failed to connect to server localhost:1099 [Root exception is javax.naming.ServiceUnavailableException: Failed to connect to server localhost:1099 [Root exception is java.net.ConnectException: Connection refused: connect]]]
+INFO [de.linogistix.common.util.ExceptionAnnotator]: Exception while lookup J2EE service
+de.linogistix.common.services.J2EEServiceNotAvailable: Exception while lookup J2EE service
+	at de.linogistix.common.services.J2EEServiceLocatorImpl.getStateless(J2EEServiceLocatorImpl.java:143)
+	at de.linogistix.common.userlogin.SecurityManager.login(SecurityManager.java:95)
+	at de.linogistix.common.userlogin.LoginPanelImpl.actionPerformed(LoginPanelImpl.java:65)
+	at org.netbeans.core.windows.services.NbPresenter$ButtonListener.actionPerformed(NbPresenter.java:1276)
+	at javax.swing.AbstractButton.fireActionPerformed(AbstractButton.java:1995)
+	at javax.swing.AbstractButton$Handler.actionPerformed(AbstractButton.java:2318)
+	at javax.swing.DefaultButtonModel.fireActionPerformed(DefaultButtonModel.java:387)
+	at javax.swing.DefaultButtonModel.setPressed(DefaultButtonModel.java:242)
+	at javax.swing.plaf.basic.BasicButtonListener.mouseReleased(BasicButtonListener.java:236)
+	at java.awt.Component.processMouseEvent(Component.java:6297)
+	at javax.swing.JComponent.processMouseEvent(JComponent.java:3275)
+	at java.awt.Component.processEvent(Component.java:6062)
+	at java.awt.Container.processEvent(Container.java:2039)
+	at java.awt.Component.dispatchEventImpl(Component.java:4660)
+	at java.awt.Container.dispatchEventImpl(Container.java:2097)
+	at java.awt.Component.dispatchEvent(Component.java:4488)
+	at java.awt.LightweightDispatcher.retargetMouseEvent(Container.java:4575)
+	at java.awt.LightweightDispatcher.processMouseEvent(Container.java:4236)
+	at java.awt.LightweightDispatcher.dispatchEvent(Container.java:4166)
+	at java.awt.Container.dispatchEventImpl(Container.java:2083)
+	at java.awt.Window.dispatchEventImpl(Window.java:2489)
+	at java.awt.Component.dispatchEvent(Component.java:4488)
+	at java.awt.EventQueue.dispatchEventImpl(EventQueue.java:674)
+	at java.awt.EventQueue.access$400(EventQueue.java:81)
+	at java.awt.EventQueue$2.run(EventQueue.java:633)
+	at java.awt.EventQueue$2.run(EventQueue.java:631)
+	at java.security.AccessController.doPrivileged(Native Method)
+	at java.security.AccessControlContext$1.doIntersectionPrivilege(AccessControlContext.java:87)
+	at java.security.AccessControlContext$1.doIntersectionPrivilege(AccessControlContext.java:98)
+	at java.awt.EventQueue$3.run(EventQueue.java:647)
+	at java.awt.EventQueue$3.run(EventQueue.java:645)
+	at java.security.AccessController.doPrivileged(Native Method)
+	at java.security.AccessControlContext$1.doIntersectionPrivilege(AccessControlContext.java:87)
+	at java.awt.EventQueue.dispatchEvent(EventQueue.java:644)
+	at java.awt.EventDispatchThread.pumpOneEventForFilters(EventDispatchThread.java:269)
+	at java.awt.EventDispatchThread.pumpEventsForFilter(EventDispatchThread.java:184)
+	at java.awt.EventDispatchThread.pumpEventsForFilter(EventDispatchThread.java:178)
+	at java.awt.Dialog$1.run(Dialog.java:1052)
+	at java.awt.Dialog$3.run(Dialog.java:1104)
+	at java.security.AccessController.doPrivileged(Native Method)
+	at java.awt.Dialog.show(Dialog.java:1102)
+	at org.netbeans.core.windows.services.NbPresenter.superShow(NbPresenter.java:985)
+	at org.netbeans.core.windows.services.NbPresenter.doShow(NbPresenter.java:1019)
+	at org.netbeans.core.windows.services.NbPresenter.run(NbPresenter.java:1007)
+	at org.netbeans.core.windows.services.NbPresenter.run(NbPresenter.java:115)
+	at org.openide.util.Mutex.doEventAccess(Mutex.java:1355)
+	at org.openide.util.Mutex.readAccess(Mutex.java:268)
+	at org.netbeans.core.windows.services.NbPresenter.show(NbPresenter.java:992)
+	at java.awt.Component.show(Component.java:1591)
+	at java.awt.Component.setVisible(Component.java:1543)
+	at java.awt.Window.setVisible(Window.java:843)
+	at java.awt.Dialog.setVisible(Dialog.java:987)
+	at org.netbeans.core.windows.services.DialogDisplayerImpl$1AWTQuery.showDialog(DialogDisplayerImpl.java:245)
+	at org.netbeans.core.windows.services.DialogDisplayerImpl$1AWTQuery.run(DialogDisplayerImpl.java:177)
+	at java.awt.event.InvocationEvent.dispatch(InvocationEvent.java:209)
+	at java.awt.EventQueue.dispatchEventImpl(EventQueue.java:672)
+	at java.awt.EventQueue.access$400(EventQueue.java:81)
+	at java.awt.EventQueue$2.run(EventQueue.java:633)
+	at java.awt.EventQueue$2.run(EventQueue.java:631)
+	at java.security.AccessController.doPrivileged(Native Method)
+	at java.security.AccessControlContext$1.doIntersectionPrivilege(AccessControlContext.java:87)
+	at java.awt.EventQueue.dispatchEvent(EventQueue.java:642)
+	at java.awt.EventDispatchThread.pumpOneEventForFilters(EventDispatchThread.java:269)
+	at java.awt.EventDispatchThread.pumpEventsForFilter(EventDispatchThread.java:184)
+	at java.awt.EventDispatchThread.pumpEventsForHierarchy(EventDispatchThread.java:174)
+	at java.awt.EventDispatchThread.pumpEvents(EventDispatchThread.java:169)
+	at java.awt.EventDispatchThread.pumpEvents(EventDispatchThread.java:161)
+[catch] at java.awt.EventDispatchThread.run(EventDispatchThread.java:122)
+WARNING [org.netbeans.ProxyClassLoader]: Should not use initial / in calls to ClassLoader.getResource(s): /org/mywms/res/mywms-messages.properties
+WARNING [org.netbeans.ProxyClassLoader]: Should not use initial / in calls to ClassLoader.getResource(s): /org/mywms/res/mywms-messages_es.properties
+WARNING [org.netbeans.ProxyClassLoader]: Should not use initial / in calls to ClassLoader.getResource(s): /org/mywms/res/mywms-messages_es_CO.properties
+[]  11/10/2014 04:19:58 PM de.linogistix.common.services.J2EEServiceLocatorImpl getStateless
+GRAVE: javax.naming.CommunicationException: Could not obtain connection to any of these urls: localhost:1099 and discovery failed with error: javax.naming.CommunicationException: Receive timed out [Root exception is java.net.SocketTimeoutException: Receive timed out] [Root exception is javax.naming.CommunicationException: Failed to connect to server localhost:1099 [Root exception is javax.naming.ServiceUnavailableException: Failed to connect to server localhost:1099 [Root exception is java.net.ConnectException: Connection refused: connect]]]
+
+[]  Exception while lookup J2EE service
+[]  11/10/2014 04:19:58 PM org.netbeans.ProxyClassLoader stripInitialSlash
+ADVERTENCIA: Should not use initial / in calls to ClassLoader.getResource(s): /org/mywms/res/mywms-messages.properties
+
+[]  11/10/2014 04:19:58 PM org.netbeans.ProxyClassLoader stripInitialSlash
+ADVERTENCIA: Should not use initial / in calls to ClassLoader.getResource(s): /org/mywms/res/mywms-messages_es.properties
+
+[]  11/10/2014 04:19:58 PM org.netbeans.ProxyClassLoader stripInitialSlash
+ADVERTENCIA: Should not use initial / in calls to ClassLoader.getResource(s): /org/mywms/res/mywms-messages_es_CO.properties
+
